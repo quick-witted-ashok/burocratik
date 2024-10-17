@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with Vertical Line Animation</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    
+    body {
+      padding-top: 60px;
+    }
+
+    .navbar img {
+      height: 50px;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .navbar a {
+      display: block;
+      color: #333;
+      font-size: 30px;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .navbar a:hover {
+      background-color: #f2f2f2;
+      color: black;
+    }
+
+    .navbar a.clicked {
+      text-decoration: underline;
+    }
+
+    /* Vertical line animation container */
+    .line-animation {
+      width: 100%;
+      height: 400px;
+      position: relative;
+      background-color: #f0f0f0;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-around;
+    }
+    .container {
+        display: flex; /* Use flexbox for layout */
+        justify-content: space-between; /* Space out the items */
+        padding: 20px;
+      }
+      .item {
+        margin: 0 10px; /* Space between items */
+      }
+    .line {
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      background-color: #333;
+      animation: drop 3s infinite;
+    }
+
+    /* Delay for each line */
+    .line:nth-child(2) {
+      left: 25%;
+      animation-delay: 1s;
+    }
+
+    .line:nth-child(3) {
+      left: 50%;
+      animation-delay: 2s;
+    }
+
+    .line:nth-child(4) {
+      left: 75%;
+      animation-delay: 3s;
+    }
+
+    @keyframes drop {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 20px;
+      flex-wrap: wrap; /* Wrap images on small screens */
+    }
+
+    .image-container img {
+      width: 100%; /* Full width for small screens */
+      height: auto;
+      margin: 10px;
+      max-width: 400px; /* Max width for larger screens */
+    }
+
+    .container {
+      display: flex;
+      padding: 20px;
+      flex-direction: column; /* Stack images vertically */
+      align-items: center; /* Center images */
+    }
+
+    .image-large {
+      flex: 3;
+      margin-right: 10px;
+    }
+
+    .image-small {
+      flex: 1;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .image-name {
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    .all {
+      text-align: center; /* Center the text */
+    }
+
+    /* Responsive styles */
+    @media (min-width: 768px) {
+      .image-container {
+        flex-wrap: nowrap; /* No wrapping on larger screens */
+      }
+
+      .image-large {
+        flex: 3;
+      }
+
+      .image-small {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <p>we are 
+        <svg style="height:30px;width:30px;" viewBox="0 0 190.47 123.93">
+            <polygon points="0 0 190.47 0 0 61.98 0 0"></polygon>
+            <polygon points="0 61.95 190.47 61.95 0 123.93 0 61.95"></polygon>
+         </svg>
+    </p>
+    
+    <div class="navbar-links">
+      <a href="#Work" id="workLink">Work</a>
+      <a href="#Studies" id="studiesLink">Studies</a>
+      <a href="#Recognition" id="recognitionLink">Recognition</a>
+    </div>
+  </div>
+
+  <div style="padding: 16px;">
+    <h1 class="buro">Hello Buro Here?</h1>
+    <h1 class="buro">We Craft Remarkable Experiences Screen And Paper</h1>
+  </div>
+
+  <div class="main-div">
+    <h1>1994-2024</h1>
+    <h1>Two Decades Branded By Buro:</h1>
+    <p class="meet">Meet Our Brands --></p>
+  </div>
+
+  <div class="image-container">
+    <img src="https://burocratik.com/wp-content/uploads/fly-images/5886/sandclock-cover-750x452-c.jpg" alt="Image 1">
+    <img src="https://burocratik.com/wp-content/uploads/fly-images/5841/hemato-thumb-750x452-c.jpg" alt="Image 2">
+  </div> 
+
+  <div class="container">
+    <div class="image-large">
+      <img src="https://burocratik.com/wp-content/uploads/fly-images/5840/kategora-thumb-750x452-c.jpg" alt="Large Image">
+      <div class="image-name">Ketogora</div>
+    </div>
+    <div class="image-small">
+      <img src="https://burocratik.com/wp-content/uploads/fly-images/5843/alts-thumb-750x452-c.jpg" alt="Small Image">
+      <div class="image-name">Alts Digital</div>
+    </div> 
+  </div>
+
+  <div class="all">
+    <h1>We are Always trying to step outside Our comfort Zone</h1>
+    <h1>That's part of the reason we got here</h1>
+  </div>
+ 
+  <div>
+    <section class="awards">
+        <h2>Latest Awards</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Award</th>
+                    <th>Contest</th>
+                    <th>Project</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024</td>
+                    <td>Site of the Day</td>
+                    <td>Awwwards</td>
+                    <td>Remote</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>Developer Award</td>
+                    <td>Awwwards</td>
+                    <td>Remote</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>Site of the Day</td>
+                    <td>Awwwards</td>
+                    <td>Criaremdu.pt</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>Developer Award</td>
+                    <td>Awwwards</td>
+                    <td>Criaremdu.pt</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>Site of the Day</td>
+                    <td>Awwwards</td>
+                    <td>Criaremdu.pt</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>FWA of the day</td>
+                    <td>FWA</td>
+                    <td>Kowserwd.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+  </div>
+  <h1 class="center">
+    Open application
+     Join us
+  </h1>
+  <div class="container">
+    
+    
+    
+    <div class="item">General questions
+
+        hello@burocratik.com
+        
+        New business enquiries
+        
+        - Let's Talk!
+        
+        Facebook
+        
+        Twitter
+        
+        Instagram
+        
+        Tumblr
+        
+        Vimeo
+        
+        Behance
+        
+        Dribbble
+        
+        Medium
+        
+        Awwwarded websites</div>
+  </div>
+
+  <script>
+    const links = document.querySelectorAll('.navbar a');
+
+    links.forEach(link => {
+      link.addEventListener('click', function() {
+        links.forEach(link => link.classList.remove('clicked'));
+        this.classList.add('clicked');
+      });
+    });
+  </script>
+
+</body>
+</html>
